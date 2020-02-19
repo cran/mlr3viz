@@ -26,6 +26,7 @@
 #' head(fortify(task))
 #' autoplot(task)
 #' autoplot(task, rhs = "sex")
+#' autoplot(task, type = "duo")
 autoplot.TaskSurv = function(object, type = "target", ...) {
   assert_string(type)
   require_namespaces(c("survival", "GGally"))

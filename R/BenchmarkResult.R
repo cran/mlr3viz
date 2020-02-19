@@ -24,7 +24,7 @@
 #'
 #' tasks = tsks(c("spam", "pima", "sonar"))
 #' learner = lrns(c("classif.featureless", "classif.rpart"), predict_type = "prob")
-#' resampling = rsmp("cv", folds = 3)
+#' resampling = rsmps("cv")
 #' object = benchmark(benchmark_grid(tasks, learner, resampling))
 #'
 #' head(fortify(object))

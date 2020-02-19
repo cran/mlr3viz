@@ -1,6 +1,6 @@
 Package: mlr3viz
 Title: Visualizations for 'mlr3'
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Michel",
            family = "Lang",
@@ -24,8 +24,8 @@ Encoding: UTF-8
 LazyData: true
 NeedsCompilation: no
 RoxygenNote: 7.0.2
-Packaged: 2020-01-07 13:04:47 UTC; michel
+Packaged: 2020-02-19 12:10:09 UTC; lang
 Author: Michel Lang [cre, aut] (<https://orcid.org/0000-0001-9754-0393>)
 Maintainer: Michel Lang <michellang@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-01-08 17:10:02 UTC
+Date/Publication: 2020-02-19 12:40:09 UTC

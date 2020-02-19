@@ -38,4 +38,5 @@ task = mlr_tasks$get("lung")
 head(fortify(task))
 autoplot(task)
 autoplot(task, rhs = "sex")
+autoplot(task, type = "duo")
 }

@@ -1,11 +1,14 @@
 
 # mlr3viz
 
+Package website: [release](https://mlr3.mlr-org.com/) |
+[dev](https://mlr3.mlr-org.com/dev)
+
 <!-- badges: start -->
 
 [![Build
 Status](https://img.shields.io/travis/mlr-org/mlr3viz/master?label=Linux&logo=travis&style=flat-square)](https://travis-ci.org/mlr-org/mlr3viz)
-[![CRAN](https://www.r-pkg.org/badges/version/mlr3viz)](https://cran.r-project.org/package=mlr3viz)
+[![CRAN Status Badge](https://www.r-pkg.org/badges/version-ago/mlr3viz)](https://cran.r-project.org/package=mlr3viz)
 [![codecov](https://codecov.io/gh/mlr-org/mlr3viz/branch/master/graph/badge.svg)](https://codecov.io/gh/mlr-org/mlr3viz)
 [![StackOverflow](https://img.shields.io/badge/stackoverflow-mlr3-orange.svg)](https://stackoverflow.com/questions/tagged/mlr3)
 <!-- badges: end -->
@@ -17,7 +20,13 @@ resample results or benchmark results via the `autoplot()` generic of
 
 ## Installation
 
-Development version:
+Install the last release from CRAN:
+
+``` r
+install.packages("mlr3")
+```
+
+Install the development version from GitHub:
 
 ``` r
 remotes::install_github("mlr-org/mlr3viz")
