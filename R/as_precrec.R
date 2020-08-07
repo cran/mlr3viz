@@ -1,9 +1,10 @@
 #' @title Convert to 'precrec' Format
 #'
 #' @description
-#' Converts to a format which is understood by [precrec::evalmod()] of package \CRANpkg{precrec}.
+#' Converts to a format which is understood by [precrec::evalmod()] of
+#' package \CRANpkg{precrec}.
 #'
-#' @param object :: `any`\cr
+#' @param object (`any`)\cr
 #'   Object to convert.
 #' @return Object as created by [precrec::mmdata()].
 #' @export
@@ -30,7 +31,7 @@ roc_data = function(prediction) {
 
 #' @rdname as_precrec
 #' @export
-as_precrec.PredictionClassif = function(object) {
+as_precrec.PredictionClassif = function(object) { # nolint
   require_namespaces("precrec")
   data = roc_data(object)
   precrec::mmdata(scores = data$scores, labels = data$labels)
@@ -39,17 +40,20 @@ as_precrec.PredictionClassif = function(object) {
 
 #' @rdname as_precrec
 #' @export
-as_precrec.ResampleResult = function(object) {
+as_precrec.ResampleResult = function(object) { # nolint
   require_namespaces("precrec")
   predictions = object$predictions()
   data = transpose_list(map(predictions, roc_data))
-  precrec::mmdata(scores = data$scores, labels = data$labels, dsids = seq_along(predictions))
+  precrec::mmdata(
+    scores = data$scores, labels = data$labels,
+    dsids = seq_along(predictions))
 }
 
 
 #' @rdname as_precrec
 #' @export
-as_precrec.BenchmarkResult = function(object) {
+as_precrec.BenchmarkResult = function(object) { # nolint
+
   require_namespaces("precrec")
 
   scores = object$score(measures = list())

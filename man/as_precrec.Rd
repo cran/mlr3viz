@@ -16,12 +16,13 @@ as_precrec(object)
 \method{as_precrec}{BenchmarkResult}(object)
 }
 \arguments{
-\item{object}{:: \code{any}\cr
+\item{object}{(\code{any})\cr
 Object to convert.}
 }
 \value{
 Object as created by \code{\link[precrec:mmdata]{precrec::mmdata()}}.
 }
 \description{
-Converts to a format which is understood by \code{\link[precrec:evalmod]{precrec::evalmod()}} of package \CRANpkg{precrec}.
+Converts to a format which is understood by \code{\link[precrec:evalmod]{precrec::evalmod()}} of
+package \CRANpkg{precrec}.
 }
