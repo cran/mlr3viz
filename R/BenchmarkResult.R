@@ -33,6 +33,7 @@
 #'
 #' head(fortify(object))
 #' autoplot(object)
+#' plot(object)
 #' autoplot(object$clone(deep = TRUE)$filter(task_ids = "spam"), type = "roc")
 #' autoplot(object$clone(deep = TRUE)$filter(task_ids = "pima"), type = "prc")
 autoplot.BenchmarkResult = function(object, # nolint
@@ -48,7 +49,7 @@ autoplot.BenchmarkResult = function(object, # nolint
   measure_id = measure$id
   tab = fortify(object, measure = measure)
   tab$nr = as.character(tab$nr)
-  learner_labels = object$learners$learner_id
+  learner_labels = unique(tab$learner_id)
 
   switch(type,
     "boxplot" = {
@@ -77,6 +78,14 @@ autoplot.BenchmarkResult = function(object, # nolint
 
     stopf("Unknown plot type '%s'", type)
   )
+}
+
+#' @importFrom graphics plot
+#' @param x ([mlr3::BenchmarkResult]).
+#' @rdname autoplot.BenchmarkResult
+#' @export
+plot.BenchmarkResult = function(x, ...) {
+  print(autoplot(x, ...))
 }
 
 #' @export
