@@ -12,9 +12,13 @@
 #' @param object ([mlr3::PredictionClassif]).
 #' @template param_type
 #' @param ... (`any`):
-#'   Additional arguments, passed down to the respective `geom`.
+#'   Additional arguments, passed down to the respective `geom` or plotting function.
 #'
 #' @return [ggplot2::ggplot()] object.
+#'
+#' @references
+#' `r tools::toRd(bibentries["precrec"])`
+#'
 #' @export
 #' @examples
 #' library(mlr3)
@@ -26,7 +30,6 @@
 #'
 #' head(fortify(object))
 #' autoplot(object)
-#' plot(object)
 #' autoplot(object, type = "roc")
 #' autoplot(object, type = "prc")
 autoplot.PredictionClassif = function(object, type = "stacked", ...) { # nolint
@@ -43,22 +46,17 @@ autoplot.PredictionClassif = function(object, type = "stacked", ...) { # nolint
     },
 
     "roc" = {
-      require_namespaces("precrec")
-      autoplot(precrec::evalmod(as_precrec(object)), curvetype = "ROC")
+      plot_precrec(object, curvetype = "ROC", ...)
     },
 
     "prc" = {
-      require_namespaces("precrec")
-      autoplot(precrec::evalmod(as_precrec(object)), curvetype = "PRC")
+      plot_precrec(object, curvetype = "PRC", ...)
     },
 
     stopf("Unknown plot type '%s'", type)
   )
 }
 
-#' @importFrom graphics plot
-#' @param x ([mlr3::PredictionClassif]).
-#' @rdname autoplot.PredictionClassif
 #' @export
 plot.PredictionClassif = function(x, ...) {
   print(autoplot(x, ...))

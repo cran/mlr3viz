@@ -7,25 +7,32 @@
 #' [mlr3::Learner] and one facet per [mlr3::Task].
 #' * `"roc"`: ROC curve (1 - specificity on x, sensitivity on y).
 #'   The [mlr3::BenchmarkResult] may only have a single [mlr3::Task] and a
-#'   single [mlr3::ResampleResult].
+#'   single [mlr3::Resampling].
 #'   Note that you can subset any [mlr3::BenchmarkResult] with its `$filter()`
 #'   method (see examples).
 #'   Requires package \CRANpkg{precrec}.
+#'   Additional arguments will be passed down to the respective [autoplot()] function
+#'   in package \CRANpkg{precrec}. Arguments `calc_avg` and `cb_alpha` are passed to
+#'   [precrec::evalmod()].
 #' * `"prc"`: Precision recall curve. See `"roc"`.
 #'
 #' @param object ([mlr3::BenchmarkResult]).
 #' @template param_type
 #' @param measure ([mlr3::Measure]).
 #' @param ... (`any`):
-#'   Additional arguments, passed down to the respective `geom`.
+#'   Additional arguments, passed down to the respective `geom` or plotting function.
 #'
 #' @return [ggplot2::ggplot()] object.
+#'
+#' @references
+#' `r tools::toRd(bibentries["precrec"])`
+#'
 #' @export
 #' @examples
 #' library(mlr3)
 #' library(mlr3viz)
 #'
-#' tasks = tsks(c("spam", "pima", "sonar"))
+#' tasks = tsks(c("pima", "sonar"))
 #' learner = lrns(c("classif.featureless", "classif.rpart"),
 #'   predict_type = "prob")
 #' resampling = rsmps("cv")
@@ -33,9 +40,7 @@
 #'
 #' head(fortify(object))
 #' autoplot(object)
-#' plot(object)
-#' autoplot(object$clone(deep = TRUE)$filter(task_ids = "spam"), type = "roc")
-#' autoplot(object$clone(deep = TRUE)$filter(task_ids = "pima"), type = "prc")
+#' autoplot(object$clone(deep = TRUE)$filter(task_ids = "pima"), type = "roc")
 autoplot.BenchmarkResult = function(object, # nolint
   type = "boxplot",
   measure = NULL,
@@ -63,26 +68,17 @@ autoplot.BenchmarkResult = function(object, # nolint
     },
 
     "roc" = {
-      require_namespaces("precrec")
-      autoplot(precrec::evalmod(as_precrec(object)),
-        curvetype = "ROC",
-        show_cb = TRUE)
+      plot_precrec(object, curvetype = "ROC", ...)
     },
 
     "prc" = {
-      require_namespaces("precrec")
-      autoplot(precrec::evalmod(as_precrec(object)),
-        curvetype = "PRC",
-        show_cb = TRUE)
+      plot_precrec(object, curvetype = "PRC", ...)
     },
 
     stopf("Unknown plot type '%s'", type)
   )
 }
 
-#' @importFrom graphics plot
-#' @param x ([mlr3::BenchmarkResult]).
-#' @rdname autoplot.BenchmarkResult
 #' @export
 plot.BenchmarkResult = function(x, ...) {
   print(autoplot(x, ...))

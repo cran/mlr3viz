@@ -1,6 +1,5 @@
 #' @title Plot for PredictionRegr
 #'
-#' @importFrom ggplot2 fortify
 #' @description
 #' Generates plots for [mlr3::PredictionRegr], depending on argument `type`:
 #'
@@ -37,7 +36,6 @@
 #'
 #' head(fortify(object))
 #' autoplot(object)
-#' plot(object)
 #' autoplot(object, type = "histogram", binwidth = 1)
 #' autoplot(object, type = "residual")
 autoplot.PredictionRegr = function(object, # nolint
@@ -81,9 +79,6 @@ autoplot.PredictionRegr = function(object, # nolint
   )
 }
 
-#' @importFrom graphics plot
-#' @param x ([mlr3::PredictionRegr]).
-#' @rdname autoplot.PredictionRegr
 #' @export
 plot.PredictionRegr = function(x, ...) {
   print(autoplot(x, ...))

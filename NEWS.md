@@ -1,3 +1,12 @@
+# mlr3viz 0.5.0
+
+- New autoplot for `PredictionSurv`.
+- New autoplots for learners from package `glmnet` via `ggfortify`.
+- Fixed ROC and PRC plots for resampling `"holdout"` (#54).
+- If possible, we now show confidence bounds for ROC and PRC plots (#55).
+- Fixed a bug in autoplot function `TaskDens` (#57).
+
+
 # mlr3viz 0.4.0
 
 - All `autoplot.*()` functions now also have a generic S3 `plot()` sibling (#51).
