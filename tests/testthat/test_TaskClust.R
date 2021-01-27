@@ -1,8 +1,7 @@
-context("TaskClust")
-
 test_that("autoplot.TaskClust", {
-  task = mlr_tasks$get("usarrests") 
-  
+  requireNamespace("mlr3cluster")
+  task = mlr3::tsk("usarrests")
+
   p = autoplot(task, type = "pairs")
-  expect_is(p, "ggmatrix")
+  expect_s3_class(p, "ggmatrix")
 })
