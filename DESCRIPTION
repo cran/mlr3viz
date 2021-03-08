@@ -1,6 +1,6 @@
 Package: mlr3viz
 Title: Visualizations for 'mlr3'
-Version: 0.5.1
+Version: 0.5.2
 Authors@R: 
     c(person(given = "Michel",
              family = "Lang",
@@ -17,6 +17,11 @@ Authors@R:
              role = "aut",
              email = "raphael.sonabend.15@ucl.ac.uk",
              comment = c(ORCID = "0000-0001-9225-4654")),
+      person(given = "Marc",
+             family = "Becker",
+             role = "aut",
+             email = "marcbecker@posteo.de",
+             comment = c(ORCID = "0000-0002-8115-0400")),
       person(given = "Damir",
              family = "Pulatov",
              role = "ctb",
@@ -35,19 +40,21 @@ Imports: checkmate, data.table, ggplot2 (>= 3.3.0), mlr3misc (>=
         0.7.0), utils
 Suggests: cluster, distr6 (>= 1.4.4), factoextra, GGally, ggfortify (>=
         0.4.11), ggparty, glmnet, lgr, mlr3 (>= 0.6.0), mlr3cluster,
-        mlr3filters, mlr3learners, mlr3proba (>= 0.2.3), partykit,
-        precrec, rpart, stats, survival, testthat (>= 3.0.0)
+        mlr3filters, mlr3learners, mlr3proba (>= 0.2.3), mlr3tuning (>=
+        0.7.0), paradox, partykit, patchwork (>= 1.1.1), precrec,
+        ranger, rpart, stats, survival, testthat (>= 3.0.0), xgboost
 Config/testthat/edition: 3
 Config/testthat/parallel: true
 Encoding: UTF-8
 LazyData: true
 NeedsCompilation: no
 RoxygenNote: 7.1.1
-Packaged: 2021-01-27 08:45:51 UTC; lang
+Packaged: 2021-03-07 19:27:15 UTC; michel
 Author: Michel Lang [cre, aut] (<https://orcid.org/0000-0001-9754-0393>),
   Patrick Schratz [aut] (<https://orcid.org/0000-0003-0748-6624>),
   Raphael Sonabend [aut] (<https://orcid.org/0000-0001-9225-4654>),
+  Marc Becker [aut] (<https://orcid.org/0000-0002-8115-0400>),
   Damir Pulatov [ctb]
 Maintainer: Michel Lang <michellang@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-01-27 09:30:15 UTC
+Date/Publication: 2021-03-08 16:12:06 UTC
