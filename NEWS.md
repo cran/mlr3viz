@@ -1,3 +1,9 @@
+# mlr3viz 0.5.6
+
+- Compatibility fix for mlr3tuning.
+- Fixed position of labels in barplot for `PredictionClassif`.
+
+
 # mlr3viz 0.5.5
 
 - Fixed another bug for ROC- and Precision-recall-curves (#79).
