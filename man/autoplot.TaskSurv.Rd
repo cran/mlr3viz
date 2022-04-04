@@ -13,8 +13,10 @@
 Type of the plot. Available choices:}
 
 \item{...}{(\code{any}):
-Additional argument, passed down to \verb{$formula} of \link[mlr3proba:TaskSurv]{mlr3proba::TaskSurv} or
-the underlying plot functions.}
+Additional arguments.
+\code{rhs} is passed down to \verb{$formula} of \link[mlr3proba:TaskSurv]{mlr3proba::TaskSurv} for stratification
+for type \code{"target"}. Other arguments are passed to the respective underlying plot
+functions.}
 }
 \value{
 \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}} object.
@@ -30,6 +32,13 @@ Generates plots for \link[mlr3proba:TaskSurv]{mlr3proba::TaskSurv}, depending on
 Color is set to target column.
 }
 }
+\section{Theme}{
+
+The \code{\link[=theme_mlr3]{theme_mlr3()}} and viridis color maps are applied by default to all
+\code{autoplot()} methods. To change this behavior set
+\code{options(mlr3.theme = FALSE)}.
+}
+
 \examples{
 library(mlr3)
 library(mlr3viz)

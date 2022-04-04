@@ -13,10 +13,15 @@
 #' @param type (`character(1)`):\cr
 #'   Type of the plot. Available choices:
 #' @param ... (`any`):
-#'   Additional argument, passed down to `$formula` of [mlr3proba::TaskSurv] or
-#'   the underlying plot functions.
+#'   Additional arguments.
+#'   `rhs` is passed down to `$formula` of [mlr3proba::TaskSurv] for stratification
+#'   for type `"target"`. Other arguments are passed to the respective underlying plot
+#'   functions.
 #'
 #' @return [ggplot2::ggplot()] object.
+#'
+#' @template section_theme
+#'
 #' @export
 #' @examples
 #' library(mlr3)
@@ -35,25 +40,30 @@ autoplot.TaskSurv = function(object, type = "target", ...) { # nolint
 
   switch(type,
     "target" = {
-      if (...length() == 0L) {
-        GGally::ggsurv(invoke(survival::survfit,
-          formula = object$formula(1),
-          data = object$data()))
-      } else {
-        GGally::ggsurv(invoke(survival::survfit,
-          formula = object$formula(...),
-          data = object$data()))
-      }
+      ddd = list(...)
+
+      sf = survival::survfit(
+        object$formula(ddd$rhs %??% 1),
+        data = object$data()
+      )
+
+      plot = GGally::ggsurv(sf, remove_named(ddd, "rhs"))
+      plot + apply_theme(list(scale_color_viridis_d(end = 0.8), theme_mlr3()))
     },
 
     "duo" = {
       GGally::ggduo(object,
         columnsX = object$target_names,
-        columnsY = object$feature_names, ...)
+        columnsY = object$feature_names, ...) +
+        apply_theme(list(
+          scale_color_viridis_d(end = 0.8),
+          theme_mlr3()
+        ))
     },
 
     "pairs" = {
-      GGally::ggpairs(object, ...)
+      GGally::ggpairs(object, ...) +
+        apply_theme(list(theme_mlr3(base_size = 10)))
     },
 
     stopf("Unknown plot type '%s'", type)

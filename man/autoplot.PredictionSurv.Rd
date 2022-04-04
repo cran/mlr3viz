@@ -6,7 +6,7 @@
 \usage{
 \method{autoplot}{PredictionSurv}(
   object,
-  type = c("calib", "dcalib"),
+  type = "dcalib",
   task = NULL,
   row_ids = NULL,
   times = NULL,
@@ -51,8 +51,16 @@ for the x (\code{T}) and y (\code{S(T)}) axes.
 \item \code{"dcalib"}: Distribution calibration plot. A model is D-calibrated if X\% of deaths occur before
 the X/100 quantile of the predicted distribution, e.g. if 50\% of observations die before their
 predicted median survival time. A model is D-calibrated if the resulting plot lies on x = y.
+\item \code{"preds"}: Matplots the survival curves for all predictions
 }
 }
+\section{Theme}{
+
+The \code{\link[=theme_mlr3]{theme_mlr3()}} and viridis color maps are applied by default to all
+\code{autoplot()} methods. To change this behavior set
+\code{options(mlr3.theme = FALSE)}.
+}
+
 \examples{
 library(mlr3)
 library(mlr3proba)
@@ -67,6 +75,9 @@ autoplot(p, type = "calib", task = task, row_ids = 301:400)
 
 # Distribution-calibration (D-Calibration)
 autoplot(p, type = "dcalib")
+
+# Predictions
+autoplot(p, type = "preds")
 }
 \references{
 Haider H, Hoehn B, Davis S, Greiner R (2020).
