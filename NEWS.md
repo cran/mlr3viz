@@ -1,3 +1,11 @@
+# mlr3viz 0.5.9
+
+- Plots for survival objects moved to mlr3proba.
+
+# mlr3viz 0.5.8
+
+- Compatibility fixes.
+
 # mlr3viz 0.5.7
 
 - Compatibility fix for testthat.
