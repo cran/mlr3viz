@@ -33,11 +33,7 @@
 #' @name theme_mlr3
 #' @rdname theme_mlr3
 #' @export
-theme_mlr3 = function(base_size = 12, base_family = "",
-  border = FALSE, margin = TRUE,
-  legend = c("top", "bottom", "left", "right", "none"),
-  x.text.angle = 0)
-{
+theme_mlr3 = function(base_size = 12, base_family = "", border = FALSE, margin = TRUE, legend = c("top", "bottom", "left", "right", "none"), x.text.angle = 0) {
   half_line = base_size / 2
   if (!is.numeric(legend)) legend = match.arg(legend)
   if (x.text.angle > 5) xhjust = 1 else xhjust = NULL
