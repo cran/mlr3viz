@@ -1,6 +1,6 @@
-f02403f370c6533fd8093fde4fb51f7b *DESCRIPTION
+5c77bc138a3a364546ad8e2f7c4f6e0e *DESCRIPTION
 b2f4860cfe4ec594f0abe4ed8a086d1d *NAMESPACE
-57c76d67b58bd8f37dc026544d0d5627 *NEWS.md
+3e11869e6535ac943a8572e47df3249b *NEWS.md
 4c831cce4b0544b6485e1631024bfa76 *R/BenchmarkResult.R
 b3a055f4b72cf486664a9168429289a2 *R/Filter.R
 ffb0d26df0abe42c3be0ec49e10067a8 *R/LearnerClassifCVGlmnet.R
@@ -10,12 +10,12 @@ b92e9a8402526c8ed168311a3036f170 *R/LearnerClassifGlmnet.R
 7246092604fca5f159abdf0eaef96ff9 *R/LearnerRegrCVGlmnet.R
 0da70e4cb0999298a4ba56b53b4a2b0e *R/LearnerRegrGlmnet.R
 c07a8b07f5b1c55f322ed25ba59ed3c4 *R/LearnerRegrRpart.R
-dd86f242ff9fc99427f2171eaecc1fea *R/OptimInstanceSingleCrit.R
+9991ae560dc992c811f5bef94f38eb58 *R/OptimInstanceSingleCrit.R
 dbaf7975b368c4f82f88c3fb83a8acb5 *R/Prediction.R
 df315033f89d89ba40eaa64ddb1974aa *R/PredictionClassif.R
 a6e6391108968c715d0f270165a6d32b *R/PredictionClust.R
-86dbfb3d8c049af310ddb0a8bfbb1a67 *R/PredictionRegr.R
-1aa0161a3afaeab057c5e9a4f7cb4f8b *R/ResampleResult.R
+968afe669c84ab817e50450a91752492 *R/PredictionRegr.R
+356f45666fe3570c6469365aed1cbcec *R/ResampleResult.R
 dc1f668476594391326177db4a609a8f *R/Task.R
 4e6d5b2ff031f5c5560cf0fa1e100b0b *R/TaskClassif.R
 c5da8a594ce4a5dbc4c307219a034c08 *R/TaskClust.R
@@ -27,7 +27,7 @@ c5da8a594ce4a5dbc4c307219a034c08 *R/TaskClust.R
 31a9247bb909097febc38065f669b9e4 *R/plot_learner_prediction.R
 b727b4debe6837ee72a84122f756756a *R/reexports.R
 be523a529d40e50ba2ad6fb100a61b9b *R/zzz.R
-d09fa8d8f104bab7ef0fd748f568e28a *README.md
+8856f3e4d3f4b1ae0cd33c17e0a53345 *README.md
 ea124a494ad7922985532ad3b308e4d5 *build/partial.rdb
 216186e9d4d2c4e5549e4add85418ee9 *inst/WORDLIST
 09202ecbe3bd4967934d0893cf83ce3a *man/as_precrec.Rd
@@ -39,8 +39,8 @@ d7d5182b7198ffac238d60dda69bdb62 *man/autoplot.BenchmarkResult.Rd
 1537ca0fd9171cbf6b7533c68d65ffe6 *man/autoplot.OptimInstanceSingleCrit.Rd
 54751f24f10094998f3bede7f477fa3b *man/autoplot.PredictionClassif.Rd
 7e414d463c85228389b498ec3a5e4157 *man/autoplot.PredictionClust.Rd
-0569ca96ea07a72a728239481a18f1b6 *man/autoplot.PredictionRegr.Rd
-a302130a16f82af3bcda2cb842e431fb *man/autoplot.ResampleResult.Rd
+aeba87bd06c490520681c39ca43d3416 *man/autoplot.PredictionRegr.Rd
+121198fdf1eacd2f85c6a9bf274070eb *man/autoplot.ResampleResult.Rd
 cca84b36ae2f51cb2b934d9184d7594f *man/autoplot.TaskClassif.Rd
 cc55d1a2e1a97c288a608b5599ea5a01 *man/autoplot.TaskClust.Rd
 71445e61ffd98ac8d44f4e4756856332 *man/autoplot.TaskRegr.Rd
@@ -48,7 +48,7 @@ cc55d1a2e1a97c288a608b5599ea5a01 *man/autoplot.TaskClust.Rd
 80ed4d01d895f39400483a9594ff2ced *man/figures/README-demo-1.png
 f396caa88fe9e0daa4bae667f1efb43a *man/figures/README-demo-2.png
 82e14b4c5103f6c7c22afbdb75cb5dfc *man/figures/logo.png
-c801f636a0474b8ec88956a14a0b2a40 *man/mlr3viz-package.Rd
+dafd733b99323abc52d231a0634828e5 *man/mlr3viz-package.Rd
 c523e60427094a055457c69bac07cd6a *man/plot_learner_prediction.Rd
 3cc5e6e766c8c62a23d35147f0787448 *man/predict_grid.Rd
 60c668b9d926e860c24b2e6323da7915 *man/reexports.Rd
@@ -119,7 +119,7 @@ a1a972fb44f64c66e19d9e48219f043e *tests/testthat/_snaps/TuningInstanceSingleCrit
 55ba5ae6a0d2246725c5b3909364786b *tests/testthat/_snaps/TuningInstanceSingleCrit/tisc-parameter-trafo-01.svg
 486b4bc9703637a7c744631490125ac3 *tests/testthat/_snaps/TuningInstanceSingleCrit/tisc-parameter-trafo-02.svg
 9a3566b8d2745ae34f5f07ac372a2d94 *tests/testthat/_snaps/TuningInstanceSingleCrit/tisc-parameter-x-domain-01.svg
-74532369e2d5d0d93973929e05a594a9 *tests/testthat/_snaps/TuningInstanceSingleCrit/tisc-performance.svg
+5d2fc3646b9ad561c6816a0538bc40b1 *tests/testthat/_snaps/TuningInstanceSingleCrit/tisc-performance.svg
 424d9c035a83ed6acc628a22ffd016d2 *tests/testthat/_snaps/TuningInstanceSingleCrit/tisc-points.svg
 926dbb01a8c0e8b4aa51d0c79c5e5f07 *tests/testthat/_snaps/TuningInstanceSingleCrit/tisc-surface-grid-50.svg
 c7271d36e0988b64ac1031c89bb49b91 *tests/testthat/_snaps/TuningInstanceSingleCrit/tisc-surface-regr-lm.svg

@@ -1,6 +1,6 @@
 Package: mlr3viz
 Title: Visualizations for 'mlr3'
-Version: 0.6.0
+Version: 0.6.1
 Authors@R: c(
     person("Michel", "Lang", , "michellang@gmail.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0001-9754-0393")),
@@ -15,7 +15,7 @@ Authors@R: c(
     person("Damir", "Pulatov", , "dpulatov@uwyo.edu", role = "ctb")
   )
 Description: Visualization package of the 'mlr3' ecosystem. It features plots
-    for mlr3 objects such as task, learners, predictions, benchmark results,
+    for mlr3 objects such as tasks, learners, predictions, benchmark results,
     tuning instances and filters via the 'autoplot()' generic of 'ggplot2'.
     The package draws plots with the 'viridis' color palette and applies the
     minimal theme. Visualizations include barplots, boxplots, histograms, ROC
@@ -46,7 +46,7 @@ Collate: 'BenchmarkResult.R' 'Filter.R' 'LearnerClassifCVGlmnet.R'
         'TaskRegr.R' 'TuningInstanceSingleCrit.R' 'as_precrec.R'
         'bibentries.R' 'helper.R' 'plot_learner_prediction.R'
         'reexports.R' 'zzz.R'
-Packaged: 2023-01-11 21:17:40 UTC; marc
+Packaged: 2023-01-23 11:06:38 UTC; marc
 Author: Michel Lang [cre, aut] (<https://orcid.org/0000-0001-9754-0393>),
   Patrick Schratz [aut] (<https://orcid.org/0000-0003-0748-6624>),
   Raphael Sonabend [aut] (<https://orcid.org/0000-0001-9225-4654>),
@@ -55,4 +55,4 @@ Author: Michel Lang [cre, aut] (<https://orcid.org/0000-0001-9754-0393>),
   Damir Pulatov [ctb]
 Maintainer: Michel Lang <michellang@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-01-12 08:30:02 UTC
+Date/Publication: 2023-01-23 14:50:02 UTC

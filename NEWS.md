@@ -1,3 +1,9 @@
+# mlr3viz 0.6.1
+
+- Add `binwidth` argument to histogram plots.
+- The `"performance"` plot always connected the maximum performance values.
+  Now the minimum values are connected when the measure is minimized.
+
 # mlr3viz 0.6.0
 
 - Add `theme` option to `autoplot()` functions to supply a `ggplot2::theme()`.
