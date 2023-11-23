@@ -1,3 +1,8 @@
+# mlr3viz 0.6.2
+
+- Fix snapshots for bbotk 0.7.3.
+- Add `"incumbent"` plot for `OptimInstanceSingleCrit`.
+
 # mlr3viz 0.6.1
 
 - Add `binwidth` argument to histogram plots.

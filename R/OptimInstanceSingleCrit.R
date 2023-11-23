@@ -19,6 +19,7 @@
 #'   * `"surface"`: Surface plot of two x dimensions versus y values.
 #'     The y values are interpolated with the supplied [mlr3::Learner].
 #'   * `"pairs"`: Plots all x and y values against each other.
+#'   * `"incumbent"`: Plots the incumbent versus the number of configurations.
 #'
 #' @param object ([bbotk::OptimInstanceSingleCrit]).
 #' @template param_type
@@ -69,16 +70,19 @@
 #'   optimizer$optimize(instance)
 #'
 #'   # plot y versus batch number
-#'   autoplot(instance, type = "performance")
+#'   print(autoplot(instance, type = "performance"))
 #'
 #'   # plot x1 values versus performance
-#'   autoplot(instance, type = "marginal", cols_x = "x1")
+#'   print(autoplot(instance, type = "marginal", cols_x = "x1"))
 #'
 #'   # plot parallel coordinates plot
-#'   autoplot(instance, type = "parallel")
+#'   print(autoplot(instance, type = "parallel"))
 #'
 #'   # plot pairs
-#'   autoplot(instance, type = "pairs")
+#'   print(autoplot(instance, type = "pairs"))
+#'
+#'   # plot incumbent
+#'   print(autoplot(instance, type = "incumbent"))
 #' }
 autoplot.OptimInstanceSingleCrit = function(object, type = "marginal", cols_x = NULL, trafo = FALSE, learner = mlr3::lrn("regr.ranger"), grid_resolution = 100, batch = NULL, theme = theme_minimal(), ...) { # nolint
   assert_subset(cols_x, c(object$archive$cols_x, paste0("x_domain_", object$archive$cols_x)))
@@ -316,6 +320,23 @@ autoplot.OptimInstanceSingleCrit = function(object, type = "marginal", cols_x = 
         upper = list(continuous = "cor",  combo = GGally::wrap("box_no_facet", fill = color, alpha = alpha), discrete = "count", na = "na"),
         lower = list(continuous = GGally::wrap("points", color = color), combo = GGally::wrap("facethist", fill = color, alpha = alpha), discrete = GGally::wrap("facetbar", fill = color, alpha = alpha), na = "na"),
         diag = list(continuous = GGally::wrap("densityDiag", color = color), discrete = GGally::wrap("barDiag", fill = color, alpha = alpha), na = "naDiag")) +
+        theme
+    },
+
+    "incumbent" = {
+      data[, "incumbent" := cummin(.SD[[1]]), .SDcols = cols_y]
+
+      ggplot(data,
+        mapping = aes(
+          x = seq_row(data),
+          y = .data[["incumbent"]],
+          lty = cols_y)) +
+        geom_step(
+          linewidth = 1,
+          color = viridis::viridis(1, begin = 0.5)) +
+        xlab("Number of Configurations") +
+        ylab(cols_y) +
+        scale_linetype(name = "Incumbent") +
         theme
     },
 
