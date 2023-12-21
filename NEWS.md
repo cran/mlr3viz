@@ -1,3 +1,7 @@
+# mlr3viz 0.7.0
+
+- Add `"prediction"` plots for classification and regression learners.
+
 # mlr3viz 0.6.2
 
 - Fix snapshots for bbotk 0.7.3.
