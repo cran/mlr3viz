@@ -1,6 +1,6 @@
 Package: mlr3viz
 Title: Visualizations for 'mlr3'
-Version: 0.7.0
+Version: 0.8.0
 Authors@R: c(
     person("Michel", "Lang", , "michellang@gmail.com", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0001-9754-0393")),
@@ -35,7 +35,7 @@ Config/testthat/edition: 3
 Config/testthat/parallel: true
 Encoding: UTF-8
 NeedsCompilation: no
-RoxygenNote: 7.2.3.9000
+RoxygenNote: 7.3.1
 Collate: 'BenchmarkResult.R' 'Filter.R' 'LearnerClassif.R'
         'LearnerClassifCVGlmnet.R' 'LearnerClassifGlmnet.R'
         'LearnerClassifRpart.R' 'LearnerClustHierarchical.R'
@@ -46,7 +46,7 @@ Collate: 'BenchmarkResult.R' 'Filter.R' 'LearnerClassif.R'
         'TaskRegr.R' 'TuningInstanceSingleCrit.R' 'as_precrec.R'
         'bibentries.R' 'helper.R' 'plot_learner_prediction.R'
         'reexports.R' 'zzz.R'
-Packaged: 2023-12-21 09:35:01 UTC; marc
+Packaged: 2024-03-04 19:16:01 UTC; marc
 Author: Michel Lang [cre, aut] (<https://orcid.org/0000-0001-9754-0393>),
   Patrick Schratz [aut] (<https://orcid.org/0000-0003-0748-6624>),
   Raphael Sonabend [aut] (<https://orcid.org/0000-0001-9225-4654>),
@@ -55,4 +55,4 @@ Author: Michel Lang [cre, aut] (<https://orcid.org/0000-0001-9754-0393>),
   Damir Pulatov [ctb]
 Maintainer: Michel Lang <michellang@gmail.com>
 Repository: CRAN
-Date/Publication: 2023-12-21 10:00:02 UTC
+Date/Publication: 2024-03-05 12:50:03 UTC

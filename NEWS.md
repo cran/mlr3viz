@@ -1,3 +1,7 @@
+# mlr3viz 0.8.0
+
+- Work with new paradox version 1.0.0
+
 # mlr3viz 0.7.0
 
 - Add `"prediction"` plots for classification and regression learners.
