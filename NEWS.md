@@ -1,3 +1,9 @@
+# mlr3viz 0.9.0
+
+- Work with new bbotk 0.9.0 and mlr3tuning 0.21.0
+
+- Add plots for `EnsembleFSResult` object.
+
 # mlr3viz 0.8.0
 
 - Work with new paradox version 1.0.0
