@@ -48,3 +48,4 @@ test_that("holdout roc plot (#54)", {
 
   expect_doppelganger("bmr_holdout_roc", p)
 })
+

@@ -1,6 +1,6 @@
 Package: mlr3viz
 Title: Visualizations for 'mlr3'
-Version: 0.9.0
+Version: 0.10.0
 Authors@R: c(
     person("Michel", "Lang", , "michellang@gmail.com", role = "aut",
            comment = c(ORCID = "0000-0001-9754-0393")),
@@ -33,23 +33,25 @@ Suggests: bbotk (>= 1.0.0), cluster, GGally, ggdendro, ggfortify (>=
         mlr3cluster, mlr3filters, mlr3fselect (>= 1.0.0), mlr3learners,
         mlr3tuning (>= 1.0.0), paradox, partykit, patchwork (>= 1.1.1),
         precrec, ranger, rpart, stats, testthat (>= 3.0.0), vdiffr (>=
-        1.0.2), xgboost
+        1.0.2), xgboost, survminer, mlr3proba (>= 0.6.3)
+Additional_repositories: https://mlr-org.r-universe.dev
 Config/testthat/edition: 3
 Config/testthat/parallel: true
 Encoding: UTF-8
 NeedsCompilation: no
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Collate: 'BenchmarkResult.R' 'Filter.R' 'LearnerClassif.R'
         'LearnerClassifCVGlmnet.R' 'LearnerClassifGlmnet.R'
         'LearnerClassifRpart.R' 'LearnerClustHierarchical.R'
         'LearnerRegr.R' 'LearnerRegrCVGlmnet.R' 'LearnerRegrGlmnet.R'
-        'LearnerRegrRpart.R' 'OptimInstanceBatchSingleCrit.R'
-        'Prediction.R' 'PredictionClassif.R' 'PredictionClust.R'
-        'PredictionRegr.R' 'ResampleResult.R' 'Task.R' 'TaskClassif.R'
-        'TaskClust.R' 'TaskRegr.R' 'TuningInstanceBatchSingleCrit.R'
+        'LearnerRegrRpart.R' 'LearnerSurvCoxPH.R'
+        'OptimInstanceBatchSingleCrit.R' 'Prediction.R'
+        'PredictionClassif.R' 'PredictionClust.R' 'PredictionRegr.R'
+        'ResampleResult.R' 'Task.R' 'TaskClassif.R' 'TaskClust.R'
+        'TaskRegr.R' 'TuningInstanceBatchSingleCrit.R'
         'EnsembleFSResult.R' 'as_precrec.R' 'bibentries.R' 'helper.R'
         'plot_learner_prediction.R' 'reexports.R' 'zzz.R'
-Packaged: 2024-07-01 08:42:32 UTC; marc
+Packaged: 2024-11-07 18:00:56 UTC; marc
 Author: Michel Lang [aut] (<https://orcid.org/0000-0001-9754-0393>),
   Patrick Schratz [aut] (<https://orcid.org/0000-0003-0748-6624>),
   Raphael Sonabend [aut] (<https://orcid.org/0000-0001-9225-4654>),
@@ -59,4 +61,4 @@ Author: Michel Lang [aut] (<https://orcid.org/0000-0001-9754-0393>),
   John Zobolas [aut] (<https://orcid.org/0000-0002-3609-8674>)
 Maintainer: Marc Becker <marcbecker@posteo.de>
 Repository: CRAN
-Date/Publication: 2024-07-01 12:30:02 UTC
+Date/Publication: 2024-11-07 21:20:01 UTC
