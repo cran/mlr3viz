@@ -24,7 +24,8 @@ Performance measure to use.}
 \item{theme}{(\code{\link[ggplot2:theme]{ggplot2::theme()}})\cr
 The \code{\link[ggplot2:ggtheme]{ggplot2::theme_minimal()}} is applied by default to all plots.}
 
-\item{...}{(ignored).}
+\item{...}{arguments passed on to \code{\link[precrec:autoplot]{precrec::autoplot()}} for \code{type = "roc"} or \code{"prc"}.
+Useful to e.g. remove confidence bands with \code{show_cb = FALSE}.}
 }
 \value{
 \code{\link[ggplot2:ggplot]{ggplot2::ggplot()}}.
@@ -41,6 +42,7 @@ Note that you can subset any \link[mlr3:BenchmarkResult]{mlr3::BenchmarkResult} 
 Requires package \CRANpkg{precrec}.
 \item \code{"prc"}: Precision recall curve.
 See \code{"roc"}.
+\item \code{"ci"}: Plot confidence intervals. Pass a \code{msr("ci", ...)} from the \code{mlr3inferr} package as argument \code{measure}.
 }
 }
 \examples{
