@@ -16,23 +16,25 @@ test_that("fortify BenchmarkResult", {
 
 test_that("autoplot BenchmarkResult", {
   p = autoplot(bmr, measure = msr("classif.ce"), type = "boxplot")
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("bmr_boxplot", p)
 
+  skip_if_not_installed("precrec")
   expect_error(autoplot(bmr, type = "roc"), "multiple")
 
   object = bmr$clone(deep = TRUE)$filter(task_ids = "sonar")
   p = autoplot(object, type = "roc")
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("bmr_roc", p)
 
   object = bmr$clone(deep = TRUE)$filter(task_ids = "pima")
   p = autoplot(object, type = "prc")
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("bmr_prc", p)
 })
 
 test_that("holdout roc plot (#54)", {
+  skip_if_not_installed("precrec")
   tasks = tsks("german_credit")
 
   learners = c("classif.featureless", "classif.rpart")
@@ -44,7 +46,7 @@ test_that("holdout roc plot (#54)", {
   design = benchmark_grid(tasks, learners, resamplings)
   bmr = benchmark(design)
   p = autoplot(bmr, type = "roc")
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
 
   expect_doppelganger("bmr_holdout_roc", p)
 })
@@ -57,7 +59,7 @@ test_that("CI plot", {
     lrns(c("regr.featureless", "regr.rpart")), rsmp("holdout")))
 
   p = autoplot(bmr, "ci", msr("ci", "regr.mse"))
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("bmr_holdout_ci", p)
 
   bmr = benchmark(benchmark_grid(tsk("iris"), lrn("classif.rpart"),

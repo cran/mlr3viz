@@ -53,7 +53,7 @@ model.
 used in the ensemble feature selection process.
 Each box represents the distribution of scores across different resampling
 iterations for a particular learner.
-\item \verb{"n_features}: Boxplot of the number of features selected by each learner
+\item \code{"n_features"}: Boxplot of the number of features selected by each learner
 in the different resampling iterations.
 \item \code{"stability"}: Barplot of stability score for each learner used in the
 ensemble feature selection. This plot shows how similar are the output feature
@@ -61,12 +61,11 @@ sets from each learner across the different resamplings.
 }
 }
 \examples{
+if (mlr3misc::require_namespaces("mlr3fselect", quietly = TRUE)) {
 \donttest{
-if (requireNamespace("mlr3")) {
-  library(mlr3)
+  set.seed (42)
   library(mlr3fselect)
 
-  set.seed (42)
   efsr = ensemble_fselect(
     fselector = fs("random_search"),
     task = tsk("sonar"),

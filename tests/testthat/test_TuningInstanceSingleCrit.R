@@ -33,7 +33,7 @@ test_that("autoplot.TuningInstanceBatchSingleCrit", {
   skip_on_cran()
 
   expect_single = function(id, plot) {
-    expect_true(is.ggplot(plot))
+    expect_true(is_ggplot(plot))
     expect_doppelganger(sprintf("tisc_%s", id), plot)
   }
 
@@ -42,7 +42,7 @@ test_that("autoplot.TuningInstanceBatchSingleCrit", {
     expect_class(plots, "DelayedPatchworkPlot")
     for (i in seq_along(plots)) {
       cur = plots[[i]]
-      expect_true(is.ggplot(cur))
+      expect_true(is_ggplot(cur))
       expect_doppelganger(sprintf("tisc_%s_%02i", id, i), cur)
     }
   }
@@ -92,7 +92,7 @@ test_that("autoplot.TuningInstanceBatchSingleCrit", {
   p = autoplot(instance, type = "incumbent")
   expect_single("incumbent", p)
 
-  # with categoircal params
+  # with categorical params
 
   # learner = mlr3::lrn("classif.xgboost")
   # learner$param_set$values$eta = paradox::to_tune(0.01, 0.1)
@@ -116,7 +116,7 @@ test_that("autoplot.TuningInstanceBatchSingleCrit", {
   # expect_single("parallel_xgboost_1", p)
 
   # p = autoplot(instance, type = "parallel", cols_x = c("maximize", "booster"))
-  # expect_true(is.ggplot(p))
+  # expect_true(is_ggplot(p))
   # # expect_single("parallel_xgboost_1", p)
 
   # expect_error(autoplot(instance, type = "surface"),

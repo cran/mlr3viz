@@ -1,10 +1,12 @@
+skip_if_not_installed("mlr3")
+
 test_that("autoplot.PredictionRegr decision boundary 1D", {
   set.seed(42)
   task = mlr3::tsk("mtcars")$select("am")
   learner = mlr3::lrn("regr.rpart")$train(task)
 
   p = autoplot(learner, type = "prediction", task = task)
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("learner_regression_1D", p)
 })
 
@@ -14,7 +16,7 @@ test_that("autoplot.PredictionClassif decision boundary 2D", {
   learner = mlr3::lrn("regr.rpart")$train(task)
 
   p = autoplot(learner, type = "prediction", task = task)
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("learner_regression_2D", p)
 })
 
@@ -24,7 +26,7 @@ test_that("autoplot.PredictionClassif decision boundary 2D", {
   learner = mlr3::lrn("regr.featureless", predict_type = "se")$train(task)
 
   p = autoplot(learner, type = "prediction", task = task)
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("learner_regression_2D_se", p)
 })
 

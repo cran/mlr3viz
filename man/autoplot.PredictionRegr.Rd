@@ -45,30 +45,26 @@ Note that \code{geom_smooth()} and \code{geom_abline()} may overlap, depending o
 \item \code{"histogram"}: Histogram of residuals: \eqn{r = y - \hat{y}}{r = y - y.hat}.
 \item \code{"residual"}: Plot of the residuals, with the response \eqn{\hat{y}}{y.hat} on the "x" and the residuals on the "y" axis.
 By default a linear model is fitted via \code{geom_smooth(method = "lm")} to visualize the trend between x and y (by default colored blue).
-\item \verb{"confidence}: Scatterplot of "true" response vs. "predicted" response with
-confidence intervals. Error bars calculated as object$reponse +- quantile * object$se and so only
+\item \code{"confidence"}: Scatterplot of "true" response vs. "predicted" response with
+confidence intervals. Error bars calculated as object$response +- quantile * object$se and so only
 possible with \code{predict_type = "se"}. \code{geom_abline()} with \code{slope = 1} is added to the plot.
 }
 }
 \examples{
-if (requireNamespace("mlr3")) {
-  library(mlr3)
-  library(mlr3viz)
+if (mlr3misc::require_namespaces("mlr3learners", quietly = TRUE)) {
+library(mlr3learners)
 
-  task = tsk("mtcars")
-  learner = lrn("regr.rpart")
-  object = learner$train(task)$predict(task)
+task = tsk("mtcars")
+learner = lrn("regr.rpart")
+object = learner$train(task)$predict(task)
 
-  head(fortify(object))
-  autoplot(object)
-  autoplot(object, type = "histogram", binwidth = 1)
-  autoplot(object, type = "residual")
+head(fortify(object))
+autoplot(object)
+autoplot(object, type = "histogram", binwidth = 1)
+autoplot(object, type = "residual")
 
- if (requireNamespace("mlr3learners")) {
-  library(mlr3learners)
-  learner = lrn("regr.ranger", predict_type = "se")
-  object = learner$train(task)$predict(task)
-  autoplot(object, type = "confidence")
- }
+learner = lrn("regr.ranger", predict_type = "se")
+object = learner$train(task)$predict(task)
+autoplot(object, type = "confidence")
 }
 }

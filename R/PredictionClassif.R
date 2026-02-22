@@ -26,18 +26,15 @@
 #' @export
 #' @examples
 #' \donttest{
-#' if (requireNamespace("mlr3")) {
-#'   library(mlr3)
-#'   library(mlr3viz)
+#' if (mlr3misc::require_namespaces("precrec", quietly = TRUE)) {
+#' task = tsk("spam")
+#' learner = lrn("classif.rpart", predict_type = "prob")
+#' object = learner$train(task)$predict(task)
 #'
-#'   task = tsk("spam")
-#'   learner = lrn("classif.rpart", predict_type = "prob")
-#'   object = learner$train(task)$predict(task)
-#'
-#'   head(fortify(object))
-#'   autoplot(object)
-#'   autoplot(object, type = "roc")
-#'   autoplot(object, type = "prc")
+#' head(fortify(object))
+#' autoplot(object)
+#' autoplot(object, type = "roc")
+#' autoplot(object, type = "prc")
 #' }
 #' }
 autoplot.PredictionClassif = function(object, type = "stacked", measure = NULL, theme = theme_minimal(), ...) { # nolint
@@ -59,8 +56,7 @@ autoplot.PredictionClassif = function(object, type = "stacked", measure = NULL, 
           stat = "count",
           position = position_stack(vjust = 0.5),
           color = "#000000") +
-        xlab("Feature") +
-        ylab("Count") +
+        labs(x = "Feature", y = "Count") +
         scale_fill_viridis_d("Feature", end = 0.8) +
         theme
     },
@@ -69,7 +65,8 @@ autoplot.PredictionClassif = function(object, type = "stacked", measure = NULL, 
       plot_precrec(object, curvetype = "ROC") +
         scale_color_viridis_d(begin = 0.5, guide = "none") +
         theme +
-        theme(plot.title = element_blank(), legend.position = "none")
+        theme(legend.position = "none") +
+        labs(title = NULL)
 
     },
 
@@ -77,7 +74,8 @@ autoplot.PredictionClassif = function(object, type = "stacked", measure = NULL, 
       plot_precrec(object, curvetype = "PRC") +
         scale_color_viridis_d(begin = 0.5, guide = "none") +
         theme +
-        theme(plot.title = element_blank(), legend.position = "none")
+        theme(legend.position = "none") +
+        labs(title = NULL)
     },
 
     "threshold" = {
@@ -90,8 +88,7 @@ autoplot.PredictionClassif = function(object, type = "stacked", measure = NULL, 
           x = .data[["prob"]],
           y = .data[["score"]])) +
         geom_line(color = viridis::viridis(1, begin = 0.5)) +
-        xlab("Probability Threshold") +
-        ylab(measure$id) +
+        labs(x = "Probability Threshold", y = measure$id) +
         scale_color_viridis_d() +
         theme
     },

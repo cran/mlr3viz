@@ -14,7 +14,7 @@
 #'      The color of the points shows the y values.
 #'   * `"parallel"`: Parallel coordinates plot.
 #'      x values are rescaled by `(x - mean(x)) / sd(x)`.
-#'   * `"points"`: Scatter plot of two x dimensions versus.
+#'   * `"points"`: Scatter plot of two x dimensions versus y values.
 #'      The color of the points shows the y values.
 #'   * `"surface"`: Surface plot of two x dimensions versus y values.
 #'     The y values are interpolated with the supplied [mlr3::Learner].
@@ -44,45 +44,46 @@
 #'
 #' @export
 #' @examples
-#' if (requireNamespace("mlr3") && requireNamespace("bbotk") && requireNamespace("patchwork")) {
-#'   library(bbotk)
-#'   library(paradox)
+#' \donttest{
+#' if (mlr3misc::require_namespaces(c("paradox", "bbotk", "patchwork"), quietly = TRUE)) {
+#' library(bbotk)
 #'
-#'   fun = function(xs) {
-#'     c(y = -(xs[[1]] - 2)^2 - (xs[[2]] + 3)^2 + 10)
-#'   }
-#'   domain = ps(
-#'     x1 = p_dbl(-10, 10),
-#'     x2 = p_dbl(-5, 5)
-#'   )
-#'   codomain = ps(
-#'     y = p_dbl(tags = "maximize")
-#'   )
-#'   obfun = ObjectiveRFun$new(
-#'     fun = fun,
-#'     domain = domain,
-#'     codomain = codomain
-#'   )
+#' fun = function(xs) {
+#'   c(y = -(xs[[1]] - 2)^2 - (xs[[2]] + 3)^2 + 10)
+#' }
+#' domain = ps(
+#'   x1 = p_dbl(-10, 10),
+#'   x2 = p_dbl(-5, 5)
+#' )
+#' codomain = ps(
+#'   y = p_dbl(tags = "maximize")
+#' )
+#' obfun = ObjectiveRFun$new(
+#'   fun = fun,
+#'   domain = domain,
+#'   codomain = codomain
+#' )
 #'
-#'   instance = oi(objective = obfun, terminator = trm("evals", n_evals = 20))
+#' instance = oi(objective = obfun, terminator = trm("evals", n_evals = 20))
 #'
-#'   optimizer = opt("random_search", batch_size = 2)
-#'   optimizer$optimize(instance)
+#' optimizer = opt("random_search", batch_size = 2)
+#' optimizer$optimize(instance)
 #'
-#'   # plot y versus batch number
-#'   print(autoplot(instance, type = "performance"))
+#' # plot y versus batch number
+#' print(autoplot(instance, type = "performance"))
 #'
-#'   # plot x1 values versus performance
-#'   print(autoplot(instance, type = "marginal", cols_x = "x1"))
+#' # plot x1 values versus performance
+#' print(autoplot(instance, type = "marginal", cols_x = "x1"))
 #'
-#'   # plot parallel coordinates plot
-#'   print(autoplot(instance, type = "parallel"))
+#' # plot parallel coordinates plot
+#' print(autoplot(instance, type = "parallel"))
 #'
-#'   # plot pairs
-#'   print(autoplot(instance, type = "pairs"))
+#' # plot pairs
+#' print(autoplot(instance, type = "pairs"))
 #'
-#'   # plot incumbent
-#'   print(autoplot(instance, type = "incumbent"))
+#' # plot incumbent
+#' print(autoplot(instance, type = "incumbent"))
+#' }
 #' }
 autoplot.OptimInstanceBatchSingleCrit = function(object, type = "marginal", cols_x = NULL, trafo = FALSE, learner = mlr3::lrn("regr.ranger"), grid_resolution = 100, batch = NULL, theme = theme_minimal(), ...) { # nolint
   assert_choice(type, choices = c("marginal", "performance", "parameter", "parallel",
@@ -155,7 +156,7 @@ autoplot.OptimInstanceBatchSingleCrit = function(object, type = "marginal", cols
           size = 3,
           stroke = 0.5,
           alpha = 0.8) +
-        xlab("Batch") +
+        labs(x = "Batch") +
         scale_y_continuous(breaks = pretty_breaks()) +
         scale_fill_manual(values = viridis::viridis(1, begin = 0.33)) +
         scale_color_manual(values = viridis::viridis(1, begin = 0.5)) +
@@ -336,8 +337,7 @@ autoplot.OptimInstanceBatchSingleCrit = function(object, type = "marginal", cols
         geom_step(
           linewidth = 1,
           color = viridis::viridis(1, begin = 0.5)) +
-        xlab("Number of Configurations") +
-        ylab(cols_y) +
+        labs(x = "Number of Configurations", y = cols_y) +
         scale_linetype(name = "Incumbent") +
         theme
     },

@@ -28,19 +28,17 @@
 #'
 #' @export
 #' @examples
-#' if (requireNamespace("mlr3")) {
-#'   library(mlr3)
-#'   library(mlr3viz)
+#' \donttest{
+#' if (mlr3misc::require_namespaces("precrec", quietly = TRUE)) {
+#' tasks = tsks(c("pima", "sonar"))
+#' learner = lrns(c("classif.featureless", "classif.rpart"), predict_type = "prob")
+#' resampling = rsmps("cv")
+#' object = benchmark(benchmark_grid(tasks, learner, resampling))
 #'
-#'   tasks = tsks(c("pima", "sonar"))
-#'   learner = lrns(c("classif.featureless", "classif.rpart"),
-#'     predict_type = "prob")
-#'   resampling = rsmps("cv")
-#'   object = benchmark(benchmark_grid(tasks, learner, resampling))
-#'
-#'   head(fortify(object))
-#'   autoplot(object)
-#'   autoplot(object$clone(deep = TRUE)$filter(task_ids = "pima"), type = "roc")
+#' head(fortify(object))
+#' autoplot(object)
+#' autoplot(object$clone(deep = TRUE)$filter(task_ids = "pima"), type = "roc")
+#' }
 #' }
 autoplot.BenchmarkResult = function(object, type = "boxplot", measure = NULL, theme = theme_minimal(), ...) {
   assert_choice(type, choices = c("boxplot", "roc", "prc", "ci"), null.ok = FALSE)
@@ -118,7 +116,7 @@ autoplot.BenchmarkResult = function(object, type = "boxplot", measure = NULL, th
       p +
         scale_color_viridis_d("Learner", end = 0.8, aesthetics = c("color", "fill")) +
         theme +
-        theme(plot.title = element_blank())
+        labs(title = NULL)
     },
 
     "prc" = {
@@ -128,7 +126,7 @@ autoplot.BenchmarkResult = function(object, type = "boxplot", measure = NULL, th
       p +
         scale_color_viridis_d("Learner", end = 0.8, aesthetics = c("color", "fill")) +
         theme +
-        theme(plot.title = element_blank())
+        labs(title = NULL)
     },
 
     stopf("Unknown plot type '%s'", type)

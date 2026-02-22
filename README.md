@@ -31,13 +31,14 @@ features a **showcase post** of the plots in `mlr3viz`.
 Install the last release from CRAN:
 
 ``` r
-install.packages("mlr3")
+install.packages("mlr3viz")
 ```
 
 Install the development version from GitHub:
 
 ``` r
-remotes::install_github("mlr-org/mlr3viz")
+# install.packages("pak")
+pak::pak("mlr-org/mlr3viz")
 ```
 
 ## Resources

@@ -7,19 +7,20 @@ prediction = learner$predict(task)
 
 test_that("autoplot.PredictionClassif", {
   p = autoplot(prediction, type = "stacked")
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("predictionclassif_stacked", p)
 
+  skip_if_not_installed("precrec")
   p = autoplot(prediction, type = "roc")
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("predictionclassif_roc", p)
 
   p = autoplot(prediction, type = "prc")
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("predictionclassif_prc", p)
 
   p = autoplot(prediction, type = "threshold")
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("predictionclassif_threshold", p)
 })
 

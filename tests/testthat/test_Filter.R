@@ -1,4 +1,4 @@
-skip_if_not_installed("mlr3")
+skip_if_not_installed("mlr3filters")
 
 test_that("autoplot.Filter", {
   task = mlr3::tsk("iris")
@@ -6,10 +6,10 @@ test_that("autoplot.Filter", {
   f$calculate(task)
 
   p = autoplot(f)
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("filter_1", p)
 
   p = autoplot(f, n = 2)
-  expect_true(is.ggplot(p))
+  expect_true(is_ggplot(p))
   expect_doppelganger("filter_2", p)
 })
