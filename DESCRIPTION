@@ -1,6 +1,6 @@
 Package: mlr3viz
 Title: Visualizations for 'mlr3'
-Version: 0.11.0
+Version: 0.11.1
 Authors@R: c(
     person("Michel", "Lang", , "michellang@gmail.com", role = "aut",
            comment = c(ORCID = "0000-0001-9754-0393")),
@@ -38,7 +38,6 @@ Config/testthat/edition: 3
 Config/testthat/parallel: true
 Encoding: UTF-8
 NeedsCompilation: no
-RoxygenNote: 7.3.3
 Collate: 'BenchmarkResult.R' 'Filter.R' 'LearnerClassif.R'
         'LearnerClassifCVGlmnet.R' 'LearnerClassifGlmnet.R'
         'LearnerClassifRpart.R' 'LearnerClustHierarchical.R'
@@ -49,7 +48,8 @@ Collate: 'BenchmarkResult.R' 'Filter.R' 'LearnerClassif.R'
         'TaskClust.R' 'TaskRegr.R' 'TuningInstanceBatchSingleCrit.R'
         'EnsembleFSResult.R' 'as_precrec.R' 'bibentries.R' 'helper.R'
         'plot_learner_prediction.R' 'reexports.R' 'zzz.R'
-Packaged: 2026-02-22 10:25:22 UTC; marc
+Config/roxygen2/version: 8.0.0.9000
+Packaged: 2026-07-25 18:36:08 UTC; marc
 Author: Michel Lang [aut] (ORCID: <https://orcid.org/0000-0001-9754-0393>),
   Patrick Schratz [aut] (ORCID: <https://orcid.org/0000-0003-0748-6624>),
   Raphael Sonabend [aut] (ORCID: <https://orcid.org/0000-0001-9225-4654>),
@@ -59,4 +59,4 @@ Author: Michel Lang [aut] (ORCID: <https://orcid.org/0000-0001-9754-0393>),
   John Zobolas [aut] (ORCID: <https://orcid.org/0000-0002-3609-8674>)
 Maintainer: Marc Becker <marcbecker@posteo.de>
 Repository: CRAN
-Date/Publication: 2026-02-22 11:20:09 UTC
+Date/Publication: 2026-07-26 02:30:08 UTC
