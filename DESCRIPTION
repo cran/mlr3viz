@@ -1,6 +1,6 @@
 Package: mlr3viz
 Title: Visualizations for 'mlr3'
-Version: 0.11.1
+Version: 0.11.2
 Authors@R: c(
     person("Michel", "Lang", , "michellang@gmail.com", role = "aut",
            comment = c(ORCID = "0000-0001-9754-0393")),
@@ -27,13 +27,13 @@ URL: https://mlr3viz.mlr-org.com, https://github.com/mlr-org/mlr3viz
 BugReports: https://github.com/mlr-org/mlr3viz/issues
 Depends: R (>= 3.3.0), mlr3 (>= 1.3.0)
 Imports: checkmate, data.table, ggplot2 (>= 3.3.0), mlr3misc (>=
-        0.7.0), scales, utils, viridis
+        0.7.0), scales, stats, utils, viridis
 Suggests: bbotk (>= 1.0.0), clue, cluster, GGally, ggdendro, ggfortify
         (>= 0.4.11), ggparty, glmnet, knitr, lgr, mlr3cluster,
-        mlr3filters, mlr3fselect (>= 1.3.0), mlr3inferr, mlr3learners,
+        mlr3filters, mlr3fselect (>= 1.7.0), mlr3inferr, mlr3learners,
         mlr3tuning (>= 1.0.0), paradox, partykit, patchwork (>= 1.1.1),
-        precrec, ranger, rpart, stats, testthat (>= 3.0.0), vdiffr (>=
-        1.0.2), xgboost
+        precrec (>= 0.24.0), ranger, rpart, testthat (>= 3.0.0), vdiffr
+        (>= 1.0.2), xgboost
 Config/testthat/edition: 3
 Config/testthat/parallel: true
 Encoding: UTF-8
@@ -48,8 +48,8 @@ Collate: 'BenchmarkResult.R' 'Filter.R' 'LearnerClassif.R'
         'TaskClust.R' 'TaskRegr.R' 'TuningInstanceBatchSingleCrit.R'
         'EnsembleFSResult.R' 'as_precrec.R' 'bibentries.R' 'helper.R'
         'plot_learner_prediction.R' 'reexports.R' 'zzz.R'
-Config/roxygen2/version: 8.0.0.9000
-Packaged: 2026-07-25 18:36:08 UTC; marc
+Config/roxygen2/version: 8.1.0
+Packaged: 2026-09-23 14:33:19 UTC; marc
 Author: Michel Lang [aut] (ORCID: <https://orcid.org/0000-0001-9754-0393>),
   Patrick Schratz [aut] (ORCID: <https://orcid.org/0000-0003-0748-6624>),
   Raphael Sonabend [aut] (ORCID: <https://orcid.org/0000-0001-9225-4654>),
@@ -59,4 +59,4 @@ Author: Michel Lang [aut] (ORCID: <https://orcid.org/0000-0001-9754-0393>),
   John Zobolas [aut] (ORCID: <https://orcid.org/0000-0002-3609-8674>)
 Maintainer: Marc Becker <marcbecker@posteo.de>
 Repository: CRAN
-Date/Publication: 2026-07-26 02:30:08 UTC
+Date/Publication: 2026-09-23 15:10:09 UTC

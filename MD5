@@ -1,6 +1,6 @@
-caa3c033b2568a94edbd5dbaf7e30388 *DESCRIPTION
-7c759a8af0b2ac15ef96f7ba16becbf2 *NAMESPACE
-075220175cd869e5b36ede80c09dba68 *NEWS.md
+70d6945614ad4e284901e04ed161c25f *DESCRIPTION
+67b224b0f3d08cce153d4ce2daa19383 *NAMESPACE
+a523f323716979d2c4759f767905cc57 *NEWS.md
 eca1cbd352337cf556067286f8df43d6 *R/BenchmarkResult.R
 794ef7764e96a48e67deba617f8ab77d *R/EnsembleFSResult.R
 92b219c8aca80c85f4c1400a08276f34 *R/Filter.R
@@ -61,14 +61,14 @@ beec0a5376dbd9543812e9edd1fd7c37 *man/reexports.Rd
 97b0c99ee66779701be3fcf941b5334c *tests/testthat.R
 28b4461def33fbc3922c86db4383966a *tests/testthat/_snaps/BenchmarkResult/bmr-boxplot.svg
 c7aa069e306f8dd870669a4f46990fca *tests/testthat/_snaps/BenchmarkResult/bmr-holdout-ci.svg
-efdd3475115f0fcba50e0caaf8efa213 *tests/testthat/_snaps/BenchmarkResult/bmr-holdout-roc.svg
-9665a930b6b0626e4a54d03fd48db09d *tests/testthat/_snaps/BenchmarkResult/bmr-prc.svg
+a554a4540c727043750ce9a904cb7ff4 *tests/testthat/_snaps/BenchmarkResult/bmr-holdout-roc.svg
+5bb34a3caf3d388db7b2ccfbe03feb21 *tests/testthat/_snaps/BenchmarkResult/bmr-prc.svg
 1ea4d58f6767c4cadd66743b4b8e600c *tests/testthat/_snaps/BenchmarkResult/bmr-roc.svg
-f6ae2fa3cb5d1210abc970ecf700c50d *tests/testthat/_snaps/EnsembleFSResult/pareto-estimated.svg
+0e0eee6dabdd043a749ef99fb8519f26 *tests/testthat/_snaps/EnsembleFSResult/pareto-estimated.svg
 427901cd98f0f8cb0432b1b7037abfae *tests/testthat/_snaps/EnsembleFSResult/pareto-n-features.svg
 a1f74ae8436844f2427e3056df0c3c1d *tests/testthat/_snaps/EnsembleFSResult/pareto-performance.svg
 5212201887bca1f1ff1f7f97561c1212 *tests/testthat/_snaps/EnsembleFSResult/pareto-stability.svg
-d564fb4ac1ad82701597b6b6727913ef *tests/testthat/_snaps/EnsembleFSResult/pareto-stepwise.svg
+162c944a7efdd582586e29ee171f6357 *tests/testthat/_snaps/EnsembleFSResult/pareto-stepwise.svg
 aff857487cf667d22d6e9de35308b871 *tests/testthat/_snaps/Filter/filter-1.svg
 ca289683e4e92c3cdaa23afa8fa44437 *tests/testthat/_snaps/Filter/filter-2.svg
 384823aca0a680bf9dce7687b4b18666 *tests/testthat/_snaps/LearnerClassif/learner-classif-prob.svg
@@ -115,7 +115,7 @@ f123863955f9e4a5c50729899fbbdcbe *tests/testthat/_snaps/PredictionRegr/predictio
 1a11df802e6c71a4dadab513874d30f8 *tests/testthat/_snaps/PredictionRegr/predictionregr-xy.svg
 da4c0ba529d1865c0a1d1d0b10fd50e7 *tests/testthat/_snaps/ResampleResult/resampleresult-boxplot.svg
 9cc4e19e6727d1e17f64f5b554b5946d *tests/testthat/_snaps/ResampleResult/resampleresult-histogram.svg
-1ec9d5c4eefd5485ba4d6d8ca6bbb15e *tests/testthat/_snaps/ResampleResult/resampleresult-prc.svg
+0e8142dfa8c23c43c2fb051613e2c56a *tests/testthat/_snaps/ResampleResult/resampleresult-prc.svg
 b8adb66274df8486925a7f5f0cf802da *tests/testthat/_snaps/ResampleResult/resampleresult-roc.svg
 ce372ec1de292018e2ac2e71cea097d2 *tests/testthat/_snaps/TaskClassif/taskclassif-duo.svg
 244462d29441de3fc5428946a0076d9b *tests/testthat/_snaps/TaskClassif/taskclassif-pairs.svg
